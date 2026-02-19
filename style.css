@@ -1,0 +1,192 @@
+/* POPPINS FONT */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --body-bg: radial-gradient(circle at center, #0b1f3a, #020b18);
+    --nav-border-bg: linear-gradient(90deg,
+            rgb(0, 183, 255),
+            rgb(10, 41, 136),
+            rgb(0, 183, 255));
+    --primary-color: white;
+    --secondary-color: #9eccee;
+    --blob-glow-bg: #0d6efd;
+    --blob-bg: linear-gradient(90deg, rgb(0, 183, 255), rgb(0, 166, 255), rgb(0, 183, 255));
+    --blob-bg: linear-gradient(90deg, rgb(0, 166, 255), rgb(0, 221, 255), rgb(0, 166, 255));
+    --gradient-text: linear-gradient(90deg, rgb(0, 166, 255), rgb(0, 221, 255));
+    --hero-text-height: 3rem;
+
+    /* --cv-btn-bg: #74c0fc;
+    --cv-btn-color: #020843; */
+}
+
+body {
+    background: var(--body-bg);
+    --bs-body-font-family: Poppins, sans-serif;
+    
+}
+
+header {
+    background: var(--body-bg);
+    position: fixed;
+    z-index: 9999;
+}
+
+/* NAVBAR */
+.navbar {
+    position: relative;
+}
+
+.navbar.nav-dark {
+    --bs-navbar-color: var(--primary-color);
+    --bs-navbar-hover-color: var(--secondary-color);
+}
+
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    background: var(--nav-border-bg);
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-size: 200% 100%;
+    animation: borderMove 3s linear infinite;
+}
+
+/* NAV BRAND */
+#brand {
+    height: 2.2rem;
+    border-radius: 8% 8% 27% 7%;
+}
+
+/* NAV TOGGLER */
+.navbar-toggler {
+    --bs-navbar-toggler-transition: transform 0.2s ease;
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb%28255,255,255%29' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    --bs-navbar-toggler-focus-width: 0;
+}
+
+.navbar-toggler:active {
+    transform: scale(0.95);
+}
+
+/* NAV LINK */
+.nav-link {
+    --bs-nav-link-font-weight: 550;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+/* CV BUTTON */
+.cv-btn {
+    width: 160px;
+    font-weight: 550;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: .375rem;
+    padding: .275rem;
+    transition: transform .3s ease;
+}
+
+.cv-btn:hover,
+.cv-btn:active {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.cv-btn:active {
+    transform: scale(.98);
+    font-size: .98rem;
+}
+
+/* BLOB */
+.blob-wrapper {
+    width: 270px;
+    height: 270px;
+}
+
+.blob-glow {
+    width: inherit;
+    height: inherit;
+    background-color: var(--blob-glow-bg);
+    border-radius: 40% 200% 45% 180%;
+    filter: blur(20px);
+
+}
+
+.blob-outline {
+    border: 2.5px solid white;
+    border-radius: 33% 200% 34% 185%;
+    z-index: 20;
+    margin: -6% 0px 0 7%;
+    transform: rotate(1deg);
+}
+
+.blob {
+    background: var(--blob-bg);
+    border-radius: 40% 200% 45% 185%;
+    z-index: 10;
+    background-size: 200% 100%;
+    animation: borderMove 3s linear infinite;
+}
+
+.blob img {
+    height: 115%;
+    margin-bottom: 15%;
+    border-radius: 0 0 0 66.5%;
+    z-index: 30;
+}
+
+/* HERO */
+.hero-name {
+    background: var(--blob-bg);
+    color: transparent;
+    background-clip: text;
+    background-size: 200% 100%;
+    animation: borderMove 2s linear infinite;
+}
+
+.dynamic-text {
+    height: var(--hero-text-height);
+    line-height: var(--hero-text-height);
+    font-weight: 550;
+    overflow: hidden;
+} 
+
+.dynamic-text li{
+    top: 0;
+    position: relative;
+    animation: slide 3s steps(2) infinite;
+}
+
+
+
+/* BORDER MOVE */
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* LIST SLIDING */
+@keyframes slide {
+    100% {
+        top: calc(var(--hero-text-height)*-2);
+    }
+}
