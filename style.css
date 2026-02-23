@@ -11,13 +11,27 @@
     --secondary-color: #9eccee;
     --primary-border-color: rgba(255, 255, 255, 0.099); 
     --blob-glow-bg: #0048ff;
-    --blob-bg: linear-gradient(135deg, rgb(0, 166, 255), rgb(0, 221, 255), rgb(0, 166, 255));
+    --blob-bg: linear-gradient(90deg, rgb(0, 183, 255), rgb(0, 166, 255), rgb(0, 183, 255));
     --gradient-text: linear-gradient(90deg, rgb(0, 166, 255), rgb(0, 221, 255));
     --hero-text-height: 3rem;
-    /* --blob-bg: linear-gradient(90deg, rgb(0, 183, 255), rgb(0, 166, 255), rgb(0, 183, 255)); */
     /* --cv-btn-bg: #74c0fc; */
     /* --cv-btn-color: #020843; */
 }
+
+/* PARTICLES BACKGROUND */
+#particles-js {
+    position: fixed;      /* stay fixed behind */
+    inset: 0;
+    z-index: 0;          /* push behind content */
+    background: var(--body-bg); /* fallback color */
+    pointer-events: none;
+}
+
+.site-content {
+    position: relative;
+    z-index: 1;
+}
+
 
 .light-grey {
     color: var(--header-bg);
@@ -168,8 +182,10 @@ header {
 
 .hero-card {
     background-color: var(--header-bg);
+    backdrop-filter: blur(12px);
     border-radius: 10% 1%;
     padding: 4rem 0;
+    width: 300px;
 }
 
 .blob-wrapper {
