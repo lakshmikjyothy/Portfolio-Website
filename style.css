@@ -1,30 +1,84 @@
-/* LATO & DANCING SCRIPT FONT */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* POPPINS & DANCING SCRIPT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --body-bg: #020b18;
     --header-bg: rgb(255 255 255 / 0.04);
     --nav-border-bg: linear-gradient(90deg,
             rgb(0, 183, 255),
             rgb(10, 41, 136),
-            rgb(0, 183, 255));
+            rgb(0, 183, 255));  
     --primary-color: white;
     --secondary-color: #9eccee;
-    --primary-border-color: rgba(255, 255, 255, 0.099); 
+    --primary-border-color: rgba(255, 255, 255, 0.099);
     --blob-glow-bg: #0048ff;
     --blob-bg: linear-gradient(90deg, rgb(0, 183, 255), rgb(0, 166, 255), rgb(0, 183, 255));
-    --gradient-text: linear-gradient(90deg, rgb(0, 166, 255), rgb(0, 221, 255));
     --hero-text-height: 3rem;
     /* --cv-btn-bg: #74c0fc; */
     /* --cv-btn-color: #020843; */
 }
 
+.light-grey {
+    color: rgba(255, 255, 255, 0.244);
+}
+
+.dancing-script {
+    font-family: "Dancing Script", Poppins;
+}
+
+.gradient-text {
+    /* background: linear-gradient(90deg, rgb(0, 153, 255), rgb(0, 221, 255));; */
+    background: linear-gradient(90deg, rgb(0, 255, 247), rgb(0, 153, 255));;
+}
+
 /* PARTICLES BACKGROUND */
 #particles-js {
-    position: fixed;      /* stay fixed behind */
+    position: fixed;
+    /* stay fixed behind */
     inset: 0;
-    z-index: 0;          /* push behind content */
-    background: var(--body-bg); /* fallback color */
+    z-index: 0;
+    /* push behind content */
+    background: var(--body-bg);
+    /* fallback color */
     pointer-events: none;
+}
+
+/* CUSTOM CURSOR */
+.custom-cursor {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Smaller outer circle */
+.cursor-ring {
+    position: absolute;
+    width: 33px;
+    /* reduced size */
+    height: 33px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    /* border-1 feel */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Dot */
+.cursor-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    /* background: rgba(200, 220, 255, 0.9); */
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    --bs-body-bg: var(--body-bg);
+    --bs-body-color: var(--primary-color);
+    --bs-body-font-family: "Poppins", sans-serif;
+    --bs-body-font-size: 15px;
 }
 
 .site-content {
@@ -32,18 +86,14 @@
     z-index: 1;
 }
 
-
-.light-grey {
-    color: var(--header-bg);
+section {
+    min-height: 100svh;
 }
 
-body {
-    --bs-body-bg: var(--body-bg);
-    --bs-body-color: var(--primary-color);
-    --bs-body-font-family: "Lato", sans-serif;  
-}
+/*___________________________________________________________________________________________________________*/
 
-header {
+
+.header, .side-header {
     background-color: var(--header-bg);
     position: fixed;
     z-index: 9999;
@@ -60,32 +110,14 @@ header {
     --bs-navbar-hover-color: var(--secondary-color);
 }
 
-
-/* .navbar::after {
-    content: "";
-    position: absolute;
-    background: var(--nav-border-bg);
-    height: 2px;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    background-size: 200% 100%;
-    animation: borderMove 3s linear infinite;
-} */
-
 /* NAV BRAND */
 #brand {
     height: 2.5rem;
-    /* border-radius: 8% 8% 27% 7%; */
-}
-
-#brand-text {
-    font-family: "Dancing Script";
 }
 
 .brand-lg {
     --bs-border-color: var(--primary-border-color);
-    
+
 }
 
 .brand-lg:hover {
@@ -93,7 +125,7 @@ header {
     background-color: var(--primary-border-color);
 }
 
-.nav-link-lg{
+.nav-link-lg {
     color: var(--primary-color);
     width: 40px;
     height: 40px;
@@ -107,12 +139,17 @@ header {
     background-color: var(--primary-border-color);
 }
 
+.nav-link-lg:active {
+    color: var(--secondary-color);
+    background-color: var(--primary-border-color);
+}
+
 .nav-link-lg i {
     font-size: 18px;
 }
 
 .bi-droplet-half {
-    background: linear-gradient(to top,#03eef2 0%, #77a6e4 50%, #9eccee 100%);
+    background: linear-gradient(to top, #03eef2 0%, #77a6e4 50%, #9eccee 100%);
     background-clip: text;
     color: transparent;
 }
@@ -121,7 +158,7 @@ header {
     background: linear-gradient(to top, #ff0000 0%, #ff8c00 50%, #ffd700 100%);
     background-clip: text;
     color: transparent;
-    
+
 }
 
 /* NAV TOGGLER */
@@ -155,42 +192,29 @@ header {
     text-decoration-thickness: 2px;
 }
 
-/* CV BUTTON */
-.cv-btn {
-    width: 160px;
-    font-weight: 550;
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: .375rem;
-    padding: .275rem;
-    transition: transform .3s ease;
+.profile-frame {
+    border: 5px solid var(--primary-border-color);
 }
 
-.cv-btn:hover,
-.cv-btn:active {
-    color: var(--secondary-color);
-    border-color: var(--secondary-color);
-}
-
-.cv-btn:active {
-    transform: scale(.98);
-    font-size: .98rem;
+/* DP */
+#profile {
+    height: 150px;
+    width: 150px;
 }
 
 /* BLOB */
 
 .hero-card {
+    width: min(300px, 90vw);
     background-color: var(--header-bg);
     backdrop-filter: blur(12px);
     border-radius: 10% 1%;
     padding: 4rem 0;
-    width: 300px;
 }
 
 .blob-wrapper {
-    width: 180px;
-    height: 186px;
+    width: 200px;
+    height: 206px;
 }
 
 .blob-glow {
@@ -218,6 +242,7 @@ header {
     z-index: 10;
     background-size: 200% 100%;
     animation: borderMove 3s linear infinite;
+    
 
 }
 
@@ -225,51 +250,113 @@ header {
     height: 115%;
     margin-bottom: 25.1%;
     margin-left: -1.5%;
-    border-radius: 0 0 0 77%;
+    border-radius: 0 0 0 78%;
     z-index: 30;
 }
 
-.hero-details {
-    background-color: var(--header-bg);
-    font-family: "Lato", sans-serif;
-}
-
-/* HERO */
 .hero-name {
-    background: var(--blob-bg);
     color: transparent;
     background-clip: text;
     background-size: 200% 100%;
     animation: borderMove 2s linear infinite;
+    font-weight: 700;
+}
+
+.hero-details {
+    background-color: var(--header-bg);
+    font-family: "Poppins", sans-serif;
+    padding: 0 2rem 0 2rem;
+}
+
+/* CV BUTTON */
+.cv-btn {
+    width: 160px;
+    font-weight: 550;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: .275rem;
+}
+
+.cv-btn:hover,
+.cv-btn:active {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* HERO */
+.hero {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(12px);
+}
+
+.headline {
+    font-weight: 550;
 }
 
 .dynamic-text {
     height: var(--hero-text-height);
     line-height: var(--hero-text-height);
+    font-size: 1.7rem;
     font-weight: 550;
     overflow: hidden;
-} 
+}
 
-.dynamic-text li{
+/* @media screen and (max-width: 400px) {
+    .dynamic-text {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 368px) {
+    .dynamic-text {
+      font-size: 1.35rem;
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+    .dynamic-text {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media screen and (max-width: 322px) {
+    .dynamic-text {
+      font-size: 1.2rem;
+    }
+  } */
+
+
+.dynamic-text li {
     top: 0;
     position: relative;
     animation: slide 3s steps(2) infinite;
 }
 
 /* ABOUT */
-
-#about h1 {
-    font-family: "Dancing Script", cursive;
+.about-container {
+    background-color: var(--header-bg);
+    backdrop-filter: blur(12px);
 }
 
-
-.about-img {
-    height: 280px;
+.about-heading {
     position: relative;
-    border: 2px dotted var(--secondary-color);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    padding: 7px;
+    display: inline-block;
 }
+
+.about-heading::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgb(0, 153, 255), rgb(0, 208, 255));
+    background-size: 200% 100%;
+    border-radius: 5px;
+    animation: borderMove 1s linear infinite;
+}
+
 
 /* BORDER MOVE */
 @keyframes borderMove {
