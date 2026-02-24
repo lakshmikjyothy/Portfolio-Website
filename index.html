@@ -23,12 +23,21 @@
   </head>
 
   <body class="">
+    <!-- BACKGROUND ANIMATION -->
     <div id="particles-js"></div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor">
+      <div class="cursor-ring"></div>
+      <div class="cursor-dot"></div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------->
 
     <div class="site-content">
       <!-- HEADER -->
       <header
-        class="w-100 py-0 justify-content-center align-items-center d-lg-none"
+        class="header w-100 py-0 justify-content-center align-items-center d-lg-none"
       >
         <!-- NAVBAR -->
         <nav class="navbar nav-dark w-100">
@@ -37,7 +46,7 @@
             <!-- NAVBAR BRAND -->
             <a class="navbar-brand p-0 d-flex align-items-center" href="#">
               <img id="brand" src="brand1.png" alt="" />
-              <span id="brand-text" class="text-light ms-3"
+              <span id="brand-text" class="text-light ms-3 dancing-script"
                 >&lt;lakshmikjyothy&gt;</span
               >
             </a>
@@ -83,13 +92,6 @@
                 <li class="nav-item col-lg">
                   <a href="#contact" class="nav-link">Contact</a>
                 </li>
-                <li class="nav-item col-lg">
-                  <!-- CV BUTTON -->
-                  <button class="cv-btn mb-4 mb-lg-0">
-                    Download CV
-                    <i class="fa-solid fa-download fa-beat-fade"></i>
-                  </button>
-                </li>
               </ul>
             </div>
           </div>
@@ -102,21 +104,21 @@
         <!-- HOME -->
         <section
           id="home"
-          class="container-fluid vh-100 d-flex justify-content-center align-items-center mt-5 mt-lg-0"
+          class="container-fluid d-flex justify-content-center align-items-center mt-5 mt-lg-0"
         >
           <div
             class="row w-100 h-100 justify-content-center align-items-center"
           >
             <!-- HERO CARD -->
             <div
-              class="col-lg-3 d-flex justify-content-center align-items-center"
+              class="col-lg-3 d-flex justify-content-center align-items-center mb-4 mb-lg-0"
             >
               <div
                 class="hero-card d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0 gap-5"
               >
                 <!-- BLOB -->
-                <div
-                  class="blob-wrapper d-flex justify-content-center align-items-center position-relative"
+                <!-- <div
+                  class="blob-wrapper d-flex justify-content-center align-items-center position-relative d-lg-none"
                 >
                   <div class="blob-glow position-absolute"></div>
                   <div
@@ -127,54 +129,98 @@
                     ></div>
                     <img src="dp.png" alt="" class="" />
                   </div>
+                </div> -->
+
+                
+                <!-- DP -->
+                <div class="profile-frame d-flex justify-content-center align-items-center overflow-hidden rounded-circle">
+                  <img src="profile.png" alt="profile picture" id="profile">
                 </div>
                 <div
-                  class="hero-details pt-4 pb-2 px-5 d-flex flex-column align-items-center rounded-1"
+                  class="hero-details pt-4 pb-2 d-flex flex-column align-items-center rounded-1"
                 >
-                  <span class="hero-name fw-bold">JYOTHYLAKSHMI K</span>
+                  <span class="hero-name gradient-text">Jyothylakshmi K</span>
                   <hr class="w-100 light-grey" />
                   <div class="d-flex justify-content-center gap-5">
                     <ul class="list-unstyled">
                       <li>Residence:</li>
-                      <li>State:</li>
+                      <li>City:</li>
                       <li>Age:</li>
                     </ul>
                     <ul class="list-unstyled text-end">
                       <li>India</li>
                       <li>Kerala</li>
-                      <li>25</li>
+                      <li>24</li>
                     </ul>
                   </div>
                 </div>
+                <!-- CV BUTTON -->
+                <button class="cv-btn rounded-pill">
+                  Download CV
+                  <i class="fa-solid fa-download fa-beat-fade"></i>
+                </button>
               </div>
             </div>
+            <!-- HERO SECTION -->
             <div
-              class="col-lg-8 d-flex justify-content-center align-items-center pt-1 pt-lg-5 pe-lg-5"
+              class="col-lg-8 d-flex justify-content-center align-items-center pt-1 pe-lg-5"
             >
               <!-- HERO -->
-              <div class="container hero">
-                <!-- <h1>Hey, I'm <span class="hero-name">Jyothy</span></h1>
-                <ul class="dynamic-text list-unstyled fs-3">
-                  <li>I'm a <span class="hero-name">Coding Enthusiast</span></li>
-                  <li>
-                    I'm an <span class="hero-name">Aspiring Developer</span>
-                  </li>
-                </ul> -->
-                <div>
-                  <!-- <p>
-                    Driven by curiosity and creativity, I’m exploring the world of
-                    web designing. I love bringing concepts to life through
-                    functional web designs.
-                  </p> -->
+              <div class="container hero py-5 px-md-5 rounded-4">
+                <div class="row">
+                  <div class="col-md-7 d-flex justify-content-center align-items-center">
+                    <div class="d-flex flex-column justify-content-center px-2 px-md-0 gap-4">
+                      <h1 class="headline fs-2 pe-5">
+                        <span>Fueled by Passion,<span><br>
+                        <span class="hero-name gradient-text dancing-script">Flowing with Precision</span
+                        >
+                      </h1>
+                        <p class="pe-5 pe-sm-0 hero-para">
+                          I’m Jyothy, a passionate coding enthusiast and aspiring developer dedicated to transforming ideas into clean, functional solutions while continually refining my skills.
+                        </p>
+                    </div>
+                    <!-- <ul class="dynamic-text list-unstyled px-2 px-md-0">
+                      <li>
+                        I'm a
+                        <span class="hero-name gradient-text"
+                          >Coding Enthusiast</span
+                        >
+                      </li>
+                      <li>
+                        I'm an
+                        <span class="hero-name gradient-text"
+                          >Aspiring Developer</span
+                        >
+                      </li>
+                    </ul> -->
+                  </div>
+                  <div class="col-md-5 d-md-flex justify-content-center align-items-center d-none py-4">
+                    <!-- BLOB -->
+                    <div
+                      class="blob-wrapper d-flex justify-content-center align-items-center position-relative"
+                    >
+                      <div class="blob-glow position-absolute"></div>
+                      <div
+                        class="blob w-100 h-100 d-flex justify-content-center align-items-center position-relative"
+                      >
+                        <div
+                          class="blob-outline w-100 h-100 position-absolute"
+                        ></div>
+                        <img src="dp.png" alt="" class="" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
               </div>
             </div>
+            <!-- SIDE HEADER SECTION -->
             <div
               class="col-lg-1 h-100 d-flex justify-content-center align-items-center"
             >
               <!-- HEADER for lg screens-->
               <header
-                class="d-lg-flex flex-lg-column d-none rounded-top-pill rounded-bottom-pill"
+                class="side-header d-lg-flex flex-lg-column d-none rounded-top-pill rounded-bottom-pill"
               >
                 <!-- NAVBAR -->
                 <nav class="navbar nav-dark m-0 p-0">
@@ -232,22 +278,22 @@
         <!-- ABOUT -->
         <section id="about" class="pt-5 pt-md-0">
           <div
-            class="cotainer-fluid row w-100 vh-100 align-items-center pt-5 mt-5 mt-md-0"
+            class="row w-100 min-vh-100"
           >
-            <div class="col-lg-6 px-5 py-lg-0">
-              <h1 class="">About Me</h1>
-              <hr class="w-25 text-light opacity-100 pb-3" />
-              <p class="about-para">
-                I’m passionate about turning ideas into visually engaging and
-                responsive web pages. I enjoy the process of designing layouts,
-                refining details, and solving small challenges that improve the
-                user experience. With a strong foundation in HTML, CSS, and
-                Bootstrap, I’m now learning JavaScript and modern development
-                practices to build more dynamic and interactive applications.
-              </p>
+            <div class="col-lg-6 py-lg-0 d-flex justify-content-center align-items-center">
+              <div class="about-container mx-4 py-5 px-4 rounded-4">
+                <h1 class="about-heading fs-2 dancing-script pb-2 mb-3">About Me</h1>
+                <p class="about-para">
+                  I’m passionate about turning ideas into visually engaging and
+                  responsive web pages. I enjoy the process of designing layouts,
+                  refining details, and solving small challenges that improve the
+                  user experience. With a strong foundation in HTML, CSS, and
+                  Bootstrap, I’m now learning JavaScript and modern development
+                  practices to build more dynamic and interactive applications.
+                </p>
+              </div>
             </div>
             <div class="col-lg-6 text-center p-0">
-              <img src="about-img.png" alt="" class="about-img" />
             </div>
           </div>
         </section>
